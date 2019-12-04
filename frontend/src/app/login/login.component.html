@@ -1,0 +1,37 @@
+<div class="example-container" [formGroup]="fGroup" >
+		<h2 style="text-align: center">Login</h2>
+	<mat-form-field id="form_login">
+		Username  
+		<input matInput placeholder="" formControlName="userName">
+		<mat-error>
+				        {{validateName()}}
+				      </mat-error>
+		</mat-form-field>
+	  
+		
+		
+				<mat-form-field>
+						Enter your password
+				  <input matInput placeholder="" [type]="hide ? 'password' : 'text'" formControlName="password" >
+				  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+				  <mat-icon>{{hide ? 'hide' : 'show'}}</mat-icon>
+				  </button>
+				  <mat-error>
+						        {{validatePass()}}
+						      </mat-error>
+				
+				</mat-form-field>
+
+				<div class="example-button-row">
+						<button (click)='onSubmit()' mat-raised-button >Login</button>
+						<a routerLink='/login/register' >Register</a>
+					<!-- <a routerLink='/login/dbData' >Show Users</a> -->
+						<button (click)='onClick()' mat-raised-button >Show User</button>
+						<!-- <button (click)="register()" mat-raised-button>Register</button> -->
+					  </div>
+
+			  
+	  </div>
+	 <!-- <app-login [childMessage] ="parentMessage"></app-login> -->
+
+	 

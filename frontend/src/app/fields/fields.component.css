@@ -1,0 +1,40 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color:ghostwhite;
+  
+  margin-right: 100px;
+  margin-left: 550px;
+  margin-top: 0px;
+  margin-bottom: 100px;
+  width: 350px;
+  height: 500px;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 60px;
+  }
+  
+  .example-container > * {
+    width: 100%;
+    
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .hg{
+    width:10%;
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+  background-color:bisque;
+}

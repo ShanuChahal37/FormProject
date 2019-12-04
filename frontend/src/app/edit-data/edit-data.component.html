@@ -1,0 +1,58 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="example-container" >
+        <br><br>
+          <h2>Form</h2>
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-error>
+                        {{validateName()}}
+                      </mat-error>
+            </mat-form-field>
+          
+            <mat-form-field>
+              <mat-select placeholder="Select Gender" formControlName="gender">
+                <mat-option *ngFor="let gen of gender" [value]="gen">{{gen}}</mat-option>                     
+              </mat-select>
+            </mat-form-field>
+        
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Date Of Birth" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error>
+                  {{validateDate(picker.value)}}
+                </mat-error>
+              </mat-form-field>
+        
+             
+              <div class="example-form">
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email"formControlName="email" >
+                  <!-- [formControl]="emailFormControl"  -->
+                  
+               <!--   <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                  -->
+                  
+                  <mat-error>
+                            {{validateEmail()}}
+                          </mat-error>
+        
+                </mat-form-field>
+              </div>
+               
+              <mat-form-field>
+                <input matInput placeholder="Phone Number" formControlName="phone" maxlength=10>
+                      <mat-error >
+                        {{validatePhone()}}
+                      </mat-error>  
+              </mat-form-field>
+        
+              <div class="hg">
+              <button type="submit" class="button"> Submit</button>
+            </div>
+            </form>
+            

@@ -1,0 +1,52 @@
+
+<h4 class="example-button-row">   
+</h4>
+<div class="example-container" [formGroup]="fGroup" >
+		<h2 style="text-align: center">Registeration</h2>
+	
+		<mat-form-field id="form_login">
+				Name  
+				<input matInput placeholder="" formControlName="name" #name>
+				<mat-error>
+						        {{validateName()}}
+						      </mat-error>
+				</mat-form-field>
+
+
+                Phone Number
+				<mat-form-field>
+						<input matInput placeholder="" formControlName="phone" maxlength=10>
+						      <mat-error >
+						        {{validatePhone()}}
+						      </mat-error>  
+					  </mat-form-field>
+	
+	
+		<mat-form-field id="form_login">
+		Username  
+		<input matInput placeholder="" formControlName="userName">
+		<mat-error>
+				        {{validateUserName()}}
+				      </mat-error>
+		</mat-form-field>
+	  
+		
+				<mat-form-field>
+					Enter Your password 
+				  <input matInput placeholder="" [type]="hide ? 'password' : 'text'" formControlName="password">
+				  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+				  <mat-icon>{{hide ? 'hide' : 'show'}}</mat-icon>
+				  </button>
+				  <mat-error>
+						        {{validatePass()}}
+						      </mat-error>
+				</mat-form-field>
+
+				<div >
+						<button class="example-button-row" (click)=" registeration()" mat-raised-button>Register</button>
+						<a  routerLink="/login"> Cancel</a>
+						<a routerLink="/login/dbData"> Show Data</a>
+					  </div>
+					  
+			  
+	  </div>
