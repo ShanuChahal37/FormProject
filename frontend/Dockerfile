@@ -10,12 +10,12 @@ FROM node:10.16.3
 WORKDIR /app
 
 # add `/app/node_modules/.bin` to $PATH
-# ENV PATH /app/node_modules/.bin:$PATH
+#  ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /app/package.json
 run npm config set https-proxy http://10.211.3.68:8080
-RUN npm install -g @angular/cli@8.3.4
+RUN npm install -g @angular/cli@8.3.20
 
 
 # add app
@@ -23,4 +23,5 @@ COPY . ../frontend
 EXPOSE 4200
 
 # start app
+# CMD ng serve --host 0.0.0.0
 CMD ng serve --host 0.0.0.0
