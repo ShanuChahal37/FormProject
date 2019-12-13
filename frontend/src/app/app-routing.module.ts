@@ -14,17 +14,10 @@ import { RouteGaurdService } from './route-gaurd.service';
 const routes: Routes = [
  
  { path:'', component:LoginComponent},
- {path: 'login',  component:LoginComponent,
-  },
- { path: 'login/form', 
- component: FieldsComponent,
-canActivate: [RouteGaurdService]
-},
+ { path: 'login',  component:LoginComponent,},
+ { path: 'login/form', component: FieldsComponent, canActivate: [RouteGaurdService] },
  { path: 'login/display', component: ShowDataComponent, canActivateChild: [RouteGaurdService] },
  { path: 'edit', component:EditDataComponent },
-
-
- 
  { path:'login/register', component: RegisterComponent, canDeactivate:[RouteGaurdService]},
  { path:'login/dbData', component: DbDataComponent,
 //canActivateChild: [RouteGaurdService]

@@ -1,21 +1,14 @@
 FROM node:10.16.3
-
-# Create app directory
-# RUN mkdir -p /usr/src/app
-WORKDIR /usr/src
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-run npm config set https-proxy http://10.211.3.68:8080
-
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
+RUN npm config set https-proxy http://10.211.3.68:8080
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . ../backend
-
+COPY . /usr/src/app
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+
+## Launch the wait tool and then your application
+CMD /wait && node index

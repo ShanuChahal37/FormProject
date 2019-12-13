@@ -4,7 +4,7 @@ import { UserLoginServiceService } from './user-login-service.service';
 import { AuthenticationServiceService } from './authentication-service.service';
 import { UserServiceService } from './user-service.service';
 import { RegisterComponent } from './register/register.component';
-import { Observable} from 'rxjs/observable';
+// import { Observable} from 'rxjs/observable';
 
 //import { LoginComponent } from './login/login.component';
 

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017";
+var url = "mongodb://mongo:27017";
 var dbo;
 
 MongoClient.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
